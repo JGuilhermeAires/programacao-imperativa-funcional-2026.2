@@ -1,17 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    float raio, area, volume;
-    const float PI = 3.141593;
-
-    printf("Digite o raio da esfera: ");
-    scanf("%f", &raio);
-
-    area = 4 * PI * raio * raio;
-    volume = (4.0 / 3.0) * PI * raio * raio * raio;
-
-    printf("Area da superficie: %.2f\n", area);
-    printf("Volume: %.2f\n", volume);
-
+    int numero, inverso = 0, digito;
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &numero);
+    while (numero > 0) {
+        digito = numero % 10;
+        inverso = inverso * 10 + digito;
+        numero = numero / 10;
+    }
+    printf("Numero invertido: %d\n", inverso);
     return 0;
 }

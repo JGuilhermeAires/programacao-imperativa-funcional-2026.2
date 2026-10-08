@@ -1,22 +1,33 @@
 #include <stdio.h>
-
 int main() {
-    float comprimento, largura;
-    float precoMetro, perimetro, metrosArame, custoTotal;
-
-    printf("Digite o comprimento do terreno (m): ");
-    scanf("%f", &comprimento);
-    printf("Digite a largura do terreno (m): ");
-    scanf("%f", &largura);
-    printf("Digite o preco do metro de arame (R$): ");
-    scanf("%f", &precoMetro);
-
-    perimetro = 2 * (comprimento + largura);
-    metrosArame = perimetro * 3;
-    custoTotal = metrosArame * precoMetro;
-
-    printf("Metros de arame necessarios: %.2f m\n", metrosArame);
-    printf("Custo total: R$ %.2f\n", custoTotal);
-
+    int A, B, i, j;
+    int primo, soma = 0;
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+    if (A >= B || A <= 0 || B <= 0) {
+        printf("Valores invalidos. A deve ser menor que B e ambos positivos.\n");
+        return 0;
+    }
+    printf("Numeros primos no intervalo: ");
+    for (i = A; i <= B; i++) {
+        primo = 1;
+        if (i < 2) {
+            primo = 0;
+        } else {
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    primo = 0;
+                    break;
+                }
+            }
+        }
+        if (primo) {
+            printf("%d ", i);
+            soma += i;
+        }
+    }
+    printf("\nSoma dos primos: %d\n", soma);
     return 0;
 }

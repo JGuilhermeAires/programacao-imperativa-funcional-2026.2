@@ -1,15 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    float graus, radianos;
-    const float PI = 3.141593;
-
-    printf("Digite o angulo em graus: ");
-    scanf("%f", &graus);
-
-    radianos = graus * (PI / 180.0);
-
-    printf("Angulo em radianos: %.2f\n", radianos);
-
+    int A, B, i;
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+    if (A <= B) {
+        for (i = A; i <= B; i++) {
+            printf("%d ", i);
+        }
+    } else {
+        for (i = A; i >= B; i--) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
     return 0;
 }

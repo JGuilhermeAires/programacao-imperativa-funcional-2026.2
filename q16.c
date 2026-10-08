@@ -1,24 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    float alturaDegrau, alturaTotal;
-    int quantidadeDegraus;
+    int senha, tentativa;
+    int senhaSecreta = 2026;
 
-    printf("Digite a altura de cada degrau (cm): ");
-    scanf("%f", &alturaDegrau);
-
-    printf("Digite a altura total desejada (m): ");
-    scanf("%f", &alturaTotal);
-
-    alturaTotal = alturaTotal * 100;
-
-    quantidadeDegraus = (int)(alturaTotal / alturaDegrau);
-
-    if (alturaTotal > quantidadeDegraus * alturaDegrau) {
-        quantidadeDegraus++;
+    for (tentativa = 1; tentativa <= 3; tentativa++) {
+        printf("Digite a senha: ");
+        scanf("%d", &senha);
+        if (senha == senhaSecreta) {
+            printf("Acesso Concedido!\n");
+            printf("Tentativas utilizadas: %d\n", tentativa);
+            return 0;
+        }
+        printf("Senha incorreta!\n");
     }
-
-    printf("Quantidade minima de degraus: %d\n", quantidadeDegraus);
-
+    printf("Conta Bloqueada por Segurança!\n");
     return 0;
 }

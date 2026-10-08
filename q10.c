@@ -1,16 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    float celsius, fahrenheit, kelvin;
-
-    printf("Digite a temperatura em Celsius: ");
-    scanf("%f", &celsius);
-
-    fahrenheit = (celsius * 9.0 / 5.0) + 32;
-    kelvin = celsius + 273.15;
-
-    printf("Fahrenheit: %.2f\n", fahrenheit);
-    printf("Kelvin: %.2f\n", kelvin);
-
+    int i;
+    for (i = 1; i <= 100; i++) {
+        printf("%d\t", i * 3);
+        if (i % 10 == 0) {
+            printf("\n");
+        }
+    }
     return 0;
 }

@@ -1,22 +1,21 @@
 #include <stdio.h>
-
 int main() {
-    int horas, minutos, segundos;
-    int duracao;
-    int totalSegundos;
-    int horaFinal, minutoFinal, segundoFinal;
-
-    printf("Digite o horario de inicio (horas minutos segundos): ");
-    scanf("%d %d %d", &horas, &minutos, &segundos);
-    printf("Digite a duracao do experimento em segundos: ");
-    scanf("%d", &duracao);
-
-    totalSegundos = horas * 3600 + minutos * 60 + segundos + duracao;
-    horaFinal = (totalSegundos / 3600) % 24;
-    minutoFinal = (totalSegundos % 3600) / 60;
-    segundoFinal = totalSegundos % 60;
-
-    printf("Horario de termino: %02d:%02d:%02d\n", horaFinal, minutoFinal, segundoFinal);
-
+    int L, i, j;
+    printf("Digite o tamanho do lado (3 a 20): ");
+    scanf("%d", &L);
+    if (L < 3 || L > 20) {
+        printf("Valor invalido. Digite um numero entre 3 e 20.\n");
+        return 0;
+    }
+    for (i = 1; i <= L; i++) {
+        for (j = 1; j <= L; j++) {
+            if (i == 1 || i == L || j == 1 || j == L) {
+                printf("X");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
     return 0;
 }

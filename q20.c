@@ -1,16 +1,10 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    float lado_a, lado_b, hipotenusa;
-
-    printf("Digite o valor do cateto A: ");
-    scanf("%f", &lado_a);
-    printf("Digite o valor do cateto B: ");
-    scanf("%f", &lado_b);
-
-    hipotenusa = sqrt((lado_a * lado_a) + (lado_b * lado_b));
-    printf("Hipotenusa: %.2f\n", hipotenusa);
-
+    int i;
+    printf("Decimal\tHexadecimal\tCaractere\n");
+    for (i = 32; i <= 126; i++) {
+        printf("%d\t%X\t\t%c\n", i, i, i);
+    }
     return 0;
 }

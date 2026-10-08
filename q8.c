@@ -1,18 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int numero;
-    int quadrado;
-    float decima;
+    float nota;
 
-    printf("Digite um numero inteiro: ");
-    scanf("%d", &numero);
+    do {
+        printf("Digite uma nota entre 0.0 e 10.0: ");
+        scanf("%f", &nota);
+        if (nota < 0.0 || nota > 10.0) {
+            printf("Nota invalida! Tente novamente.\n");
+        }
+    } while (nota < 0.0 || nota > 10.0);
 
-    quadrado = numero * numero;
-    decima = numero / 10.0;
-
-    printf("Quadrado: %d\n", quadrado);
-    printf("Decima parte: %.2f\n", decima);
-
+    printf("Nota registrada com sucesso!\n");
     return 0;
 }

@@ -1,17 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    float n1, n2, n3, n4;
-    float mediaSimples, mediaPonderada;
-
-    printf("Digite as quatro notas: ");
-    scanf("%f %f %f %f", &n1, &n2, &n3, &n4);
-
-    mediaSimples = (n1 + n2 + n3 + n4) / 4;
-    mediaPonderada = (n1 + n2 + (n3 * 2) + (n4 * 2)) / 6;
-
-    printf("Media simples: %.2f\n", mediaSimples);
-    printf("Media ponderada: %.2f\n", mediaPonderada);
-
+    int NUM, i, encontrou = 0;
+    printf("Digite um numero limite positivo: ");
+    scanf("%d", &NUM);
+    for (i = 1; i <= NUM; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            printf("%d ", i);
+            encontrou = 1;
+        }
+    }
+    if (!encontrou) {
+        printf("Nenhum numero satisfaz a condicao.");
+    }
+    printf("\n");
     return 0;
 }

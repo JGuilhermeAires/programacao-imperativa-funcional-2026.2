@@ -1,10 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
-    char caractere;
-    printf("Digite um caractere: ");
-    scanf("%c", &caractere);
-    printf("Caractere: %c\n", caractere);
-    printf("Codigo ASCII: %d\n", caractere);
+    char secreta, tentativa;
+    int tentativas = 0;
+
+    srand(time(NULL));
+    secreta = rand() % 26 + 'a';
+
+    do {
+        printf("Digite uma letra: ");
+        scanf(" %c", &tentativa);
+        tentativas++;
+
+        if (tentativa < secreta) {
+            printf("A letra secreta vem depois no alfabeto.\n");
+        } else if (tentativa > secreta) {
+            printf("A letra secreta vem antes no alfabeto.\n");
+        } else {
+            printf("Parabens! Voce acertou!\n");
+            printf("Total de tentativas: %d\n", tentativas);
+        }
+    } while (tentativa != secreta);
+
     return 0;
 }

@@ -1,23 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    float L, B, H;
-    float areaQuadrado, areaRetangulo, areaTriangulo;
+    int N;
+    long long int fatorial = 1;
 
-    printf("Digite o lado do quadrado: ");
-    scanf("%f", &L);
-    printf("Digite a base do retangulo: ");
-    scanf("%f", &B);
-    printf("Digite a altura do retangulo: ");
-    scanf("%f", &H);
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &N);
 
-    areaQuadrado = L * L;
-    areaRetangulo = B * H;
-    areaTriangulo = (B * H) / 2;
-
-    printf("Area do quadrado: %.2f\n", areaQuadrado);
-    printf("Area do retangulo: %.2f\n", areaRetangulo);
-    printf("Area do triangulo: %.2f\n", areaTriangulo);
+    if (N < 0) {
+        printf("Nao existe fatorial de numero negativo.\n");
+    } else {
+        for (int i = 1; i <= N; i++) {
+            fatorial *= i;
+        }
+        printf("%d! = %lld\n", N, fatorial);
+    }
 
     return 0;
 }

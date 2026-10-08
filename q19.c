@@ -1,19 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    int dias;
-    float bruto, desconto, liquido;
-
-    printf("Digite o numero de dias trabalhados: ");
-    scanf("%d", &dias);
-
-    bruto = dias * 30.0;
-    desconto = bruto * 0.08;
-    liquido = bruto - desconto;
-
-    printf("Valor bruto: R$ %.2f\n", bruto);
-    printf("Desconto de 8%%: R$ %.2f\n", desconto);
-    printf("Valor liquido: R$ %.2f\n", liquido);
-
+    int N, i;
+    long long int a = 1, b = 1, proximo;
+    printf("Digite o termo desejado: ");
+    scanf("%d", &N);
+    if (N <= 0) {
+        printf("O termo deve ser maior que zero.\n");
+        return 0;
+    }
+    printf("Termos: ");
+    for (i = 1; i <= N; i++) {
+        printf("%lld ", a);
+        proximo = a + b;
+        a = b;
+        b = proximo;
+    }
+    printf("\n");
+    a = 1;
+    b = 1;
+    for (i = 1; i < N; i++) {
+        proximo = a + b;
+        a = b;
+        b = proximo;
+    }
+    printf("O %dº termo de Fibonacci e: %lld\n", N, a);
     return 0;
 }

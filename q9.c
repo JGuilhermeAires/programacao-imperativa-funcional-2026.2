@@ -1,24 +1,25 @@
 #include <stdio.h>
 
 int main() {
-    int num1, num2;
-    float divisao;
+    float valor, soma = 0.0, media;
+    int quantidade = 0;
 
-    printf("Digite o primeiro numero: ");
-    scanf("%d", &num1);
+    do {
+        printf("Digite um valor positivo (negativo para parar): ");
+        scanf("%f", &valor);
+        if (valor >= 0) {
+            soma += valor;
+            quantidade++;
+        }
+    } while (valor >= 0);
 
-    printf("Digite o segundo numero: ");
-    scanf("%d", &num2);
-
-    printf("Soma: %d\n", num1 + num2);
-    printf("Subtracao: %d\n", num1 - num2);
-    printf("Multiplicacao: %d\n", num1 * num2);
-
-    if (num2 != 0) {
-        divisao = (float)num1 / num2;
-        printf("Divisao: %.2f\n", divisao);
+    if (quantidade > 0) {
+        media = soma / quantidade;
+        printf("Quantidade de valores: %d\n", quantidade);
+        printf("Soma total: %.2f\n", soma);
+        printf("Media: %.2f\n", media);
     } else {
-        printf("Nao e possivel dividir por zero.\n");
+        printf("Nenhum valor valido foi digitado.\n");
     }
 
     return 0;
